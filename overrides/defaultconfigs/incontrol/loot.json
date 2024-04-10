@@ -100,6 +100,14 @@
 	"item": "minecraft:rotten_flesh"
     },
     {
+	"mob": "blue_skies:starlit_crusher",
+	"item": "simple_mobs:summoning_rune_1"
+    },
+    {
+	"mob": "blue_skies:arachnarch",
+	"item": "simple_mobs:summoning_rune_2"
+    },
+    {
 	"mob": "minecraft:pillager",
 	"remove": "minecraft:crossbow"
     },

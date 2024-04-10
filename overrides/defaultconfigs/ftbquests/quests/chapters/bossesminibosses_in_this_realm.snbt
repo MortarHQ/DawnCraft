@@ -1325,7 +1325,7 @@
 				type: "kill"
 				title: "Herobrine"
 				icon: "minecraft:player_head"
-				entity: "simple_mobs:herobrine_flash"
+				entity: "simple_mobs:herobrine"
 				value: 1L
 			}]
 			rewards: [{

@@ -32,7 +32,9 @@
 	#DISTANCE: Uses the distance to the position defined in Center Position to define the difficulty
 	#DISTANCESPAWN: Uses the distance to the world spawn to define the difficulty
 	#If the type is any of the distance types the functionality of Difficulty Increase is changed to the following where the 1. value is the minimum distance and the 2. is the difficulty that applies. 
-	#E.g. ["0-0","1000-5" translates to 0 difficulty between 0-1000 distance and 5 difficulty for distance >= 1000
+	#E.g. ["0-0","1000-5"] translates to 0 difficulty between 0-1000 distance and 5 difficulty for distance >= 1000
+	#You can also define it as a triple x-y-z instead where z is the increase per block in for that area.
+	#E.g. ["0-0-0.1","1000-5-1"] the difficulty increases between 0-1000 by 0.1 per block and >= 1000 by 1 per block with a starting value of 5
 	#Allowed Values: GLOBAL, PLAYERMAX, PLAYERMEAN, DISTANCE, DISTANCESPAWN
 	"Difficulty type" = "PLAYERMEAN"
 	#If true ignores mobs from spawners
@@ -68,14 +70,15 @@
 	#Treat NEUTRALAGGRO flags as whitelist
 	"Neutral Aggro Whitelist" = true
 	#Entities added here will be blacklisted from their assigned flags. Usage:
-	#<entity registry name> or <namespace> followed by any of:
+	#<entity registry name> or <namespace> or <#tag> followed by any of:
 	#[ALL,ATTRIBUTES,ARMOR,HELDITEMS,BLOCKBREAK,USEITEM,LADDER,STEAL,GUARDIAN,PHANTOM,TARGETVILLAGER,NEUTRALAGGRO,REVERSE].
 	#Having no flags is equal to ALL. Use REVERSE to reverse all flags. Some flags do nothing for certain mobs!
 	#Examples (without <>):
 	#<minecraft:sheep> (equal to minecraft:sheep|ALL) excludes sheeps from all modifications
 	#<minecraft:sheep|REVERSE|ATTRIBUTES will> add sheep to attributes modification only
+	#<#minecraft:raiders|ATTRIBUTES> will add all entities in the raiders tag to everything except attributes
 	#<minecraft:sheep|ATTRIBUTES> will add sheep to everything except attributes
-	#<minecraft> blacklists all minecraft mobs from everything
+	#<minecraft> disables everything for all minecraft mobs
 	"Entity Configs" = ["netherskeletons:charred_skeleton|ATTRIBUTES", "netherskeletons:nether_skeleton|ATTRIBUTES", "netherskeletons:basalt_skeleton|ATTRIBUTES", "netherskeletons:warped_skeleton|ATTRIBUTES", "netherskeletons:crimson_skeleton|ATTRIBUTES", "netherskeletons:soul_skeleton|ATTRIBUTES", "tinyskeletons:baby_stray|ATTRIBUTES", "tinyskeletons:baby_wither_skeleton|ATTRIBUTES", "tinyskeletons:baby_skeleton|ATTRIBUTES", "monsterplus:overgrown_skeleton|ATTRIBUTES", "monsterplus:crystal_zombie|ATTRIBUTES", "monsterplus:swamp_zombie|ATTRIBUTES", "monsterplus:spectral_skeleton|ATTRIBUTES", "monsterplus:glow_skeleton|ATTRIBUTES", "minecraft:ravager|ATTRIBUTES", "minecraft:evoker|ATTRIBUTES|USEITEM|LADDER", "minecraft:vindicator|BLOCKBREAK|USEITEM|LADDER", "minecraft:pillager|ATTRIBUTES|USEITEM|LADDER", "dannys_expansion:goblin|NEUTRALAGGRO|LADDER", "monsterplus:swamp_zombie|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM|LADDER", "earthmobsmod:bouldering_zombie|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM|STEAL|LADDER", "earthmobsmod:lobber_zombie|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM|STEAL|LADDER", "minecraft:zombie|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM|STEAL|LADDER", "kobolds:kobold_zombie|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM|LADDER", "kobolds:kobold_zombie|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM|LADDER", "minecraft:stray|LADDER|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM", "minecraft:spider|ATTRIBUTES", "minecraft:skeleton|LADDER|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM", "minecraft:husk|LADDER|BLOCKBREAK|ARMOR|ATTRIBUTES|HELDITEMS|USEITEM", "dannys_expansion:goblin|TARGETVILLAGER", "bloodandmadness:church_doctor_lantern|TARGETVILLAGER", "earthmobsmod:wither_skeleton_wolf|TARGETVILLAGER", "dannys_expansion:monstrous_scorpion|TARGETVILLAGER", "bloodandmadness:church_doctor_flamesprayer|TARGETVILLAGER", "untamedwilds:shark|TARGETVILLAGER", "bloodandmadness:church_doctor_scythe|TARGETVILLAGER", "bloodandmadness:church_doctor_crucifix|TARGETVILLAGER", "bloodandmadness:skeletal_puppet|TARGETVILLAGER", "dannys_expansion:klifour|TARGETVILLAGER", "bloodandmadness:micolash|TARGETVILLAGER", "bloodandmadness:church_doctor|TARGETVILLAGER", "bloodandmadness:huntsman_axe|TARGETVILLAGER", "bloodandmadness:gascoigne_beast|TARGETVILLAGER", "bloodandmadness:father_gascoigne|TARGETVILLAGER", "bloodandmadness:church_doctor_pistol|TARGETVILLAGER", "darkersouls:nameless_king|TARGETVILLAGER", "bloodandmadness:huntsman_cutlass|TARGETVILLAGER"]
 	#Treat USEITEM flags as whitelist
 	"Use Flag Whitelist" = false
@@ -100,7 +103,7 @@
 #Settings regarding custom ai for mobs
 [ai]
 	#Whitelist for blocks, which can be actively broken. 
-	#Usage: <registry name;classname;tag;namespace> put "!" infront to exclude blocks
+	#Usage: id|namespace|#tag. Put "!" infront to exclude blocks. E.g. "minecraft", "minecraft:dirt" or "#minecraft:planks"
 	#Note: If you include common blocks (like grass blocks) the pathfinding can have undesirable results.
 	"Block Break Whitelist" = ["forge:glass", "forge:glass_panes", "minecraft:fence_gates", "forge:fence_gates", "minecraft:wooden_doors"]
 	#Treat Block Whitelist as Blocklist

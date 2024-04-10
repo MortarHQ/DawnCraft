@@ -36,13 +36,13 @@
 	[perspective.offset]
 		#Third person camera x-offset.
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-		offset_x = 1.734723475976807E-16
+		offset_x = 0.05000000000000016
 		#Third person camera y-offset.
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 		offset_y = 0.32499999999999984
 		#Third person camera z-offset.
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-		offset_z = 4.975
+		offset_z = 3.6249999999999876
 
 		[perspective.offset.min]
 			#If x-offset is limited this is the minimum amount.

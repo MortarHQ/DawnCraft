@@ -56,3 +56,15 @@
 		#Range: 0.0 ~ 100.0
 		attackSpeed = 1.0499999523162842
 
+#Weapon Of Minecraft
+[wom]
+	disable_builtin_loot = true
+
+#Infernal Gainer
+[infernal]
+	disable_builtin_loot = true
+
+#General
+[general]
+	avoid_fetching_supporters = false
+
