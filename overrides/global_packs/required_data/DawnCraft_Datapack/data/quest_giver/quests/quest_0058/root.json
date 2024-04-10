@@ -1,0 +1,12 @@
+{
+  "reputation": 15,
+  "icon": "minecraft:cod",
+  "start": {
+    "title": {
+      "text": "嗨！"
+    },
+    "description": {
+      "text": "冒险者，你能帮帮我吗？求你了。"
+    }
+  }
+}

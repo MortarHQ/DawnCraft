@@ -1,0 +1,13 @@
+{
+  "parent": "quest_giver:quest_0001_01",
+  "reputation": 5,
+  "icon": "minecraft:wooden_sword",
+  "start": {
+    "title": {
+      "text": "想来……"
+    },
+    "description": {
+      "text": "想来……有个办法让我能报答你。你能拿张纸来，让我给你画张地图吗？"
+    }
+  }
+}

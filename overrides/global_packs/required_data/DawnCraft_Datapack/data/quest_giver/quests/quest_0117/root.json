@@ -1,0 +1,12 @@
+{
+  "reputation": 5,
+  "icon": "minecraft:iron_sword",
+  "start": {
+    "title": {
+      "text": "传授剑艺"
+    },
+    "description": {
+      "text": "我有一个有趣的技能可以教你 - 跨步。但会花费你15个绿宝石。"
+    }
+  }
+}

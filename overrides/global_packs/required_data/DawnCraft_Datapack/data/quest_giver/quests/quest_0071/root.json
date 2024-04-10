@@ -1,0 +1,12 @@
+{
+  "reputation": 40,
+  "icon": "minecraft:book",
+  "start": {
+    "title": {
+      "text": "嘿！"
+    },
+    "description": {
+      "text": "你好！你愿意为我踏上一段征程吗，旅行者？"
+    }
+  }
+}

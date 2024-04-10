@@ -1,0 +1,12 @@
+{
+  "reputation": 25,
+  "icon": "minecraft:diamond",
+  "start": {
+    "title": {
+      "text": "算了。"
+    },
+    "description": {
+      "text": "村民在最后几秒决定不和你说话。"
+    }
+  }
+}
